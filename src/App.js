@@ -1,9 +1,19 @@
 
+import React from "react";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import CajaBusquedas from './componentes/CajaBusquedas/CajaBusquedas';
+import ResultadosBusqueda from "./componentes/ResultadosBusqueda/ResultadosBusqueda";
+import DetallePrducto from "./componentes/DetalleProducto/DetalleProducto";
+import './App.scss';
+
+
 function App() {
   return (
-    <div>
-APP - Mercado libre!
-    </div>
+    <Router>
+      <Route path='/' component={CajaBusquedas} />
+      <Route path='/items' component={ResultadosBusqueda} />
+      <Route path='/items/:id' component={DetallePrducto} />
+    </Router>
   );
 }
 
