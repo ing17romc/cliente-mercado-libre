@@ -11,8 +11,8 @@ function App() {
   return (
     <Router>
       <Route path='/' component={CajaBusquedas} />
-      <Route path='/items' component={ResultadosBusqueda} />
-      <Route path='/items/:id' component={DetallePrducto} />
+      <Route exact path='/items' component={ResultadosBusqueda} />
+      <Route exact path='/items/:id' component={DetallePrducto} />
     </Router>
   );
 }
