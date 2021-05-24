@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation, useHistory } from 'react-router-dom';
 import axios from 'axios';
-import './ResultadosBusqueda.scss'
+import './ResultadosBusqueda.scss';
 
 const ResultadosBusqueda = () => {
 
@@ -15,17 +15,15 @@ const ResultadosBusqueda = () => {
     useEffect(() => {
         const apiBusqueda = async () => {
             try {
-                const resultados = await axios.get(process.env.REACT_APP_URL_BUSQUEDA + search);
+                const resultados = await axios.get(`${process.env.REACT_APP_URL_BUSQUEDA}${search}`);
                 if (resultados.data.items.length > 0) {
-                    setstate(resultados.data.items)
-                    setCategorias(resultados.data.categories)
-                }
-                else {
+                    setstate(resultados.data.items);
+                    setCategorias(resultados.data.categories);
+                } else {
                     setstate([]);
-                    setCategorias([])
+                    setCategorias([]);
                 }
-            }
-            catch {
+            } catch {
                 setstate([]);
             }
         };
@@ -33,22 +31,17 @@ const ResultadosBusqueda = () => {
         return () => { };
     }, [search]);
 
-    const detalleProducto = (id) => {
-        console.log(id);
-        history.push('/items/' + id )
-    }
-
-
+    const detalleProducto = id => {
+        history.push({ pathname: `/items/${id}`, state: { categorias, search } });
+    };
 
     return <div className='cuadricula '>
         <div className='inicia-2 mide-10 relleno-vertical-menu'>
-           
             {
-                categorias.map((element, index) => <label key={'cat_' + index}> {element + ' >'} </label>)
+                categorias.map((element, index) => <label key={`cat_${index}`}> {`${element} > `} </label>)
             }
         </div>
         {
-
             state.map(elemento =>
 
                 <div className='inicia-2 mide-10 fondo-blanco' key={elemento.id}>
@@ -71,7 +64,7 @@ const ResultadosBusqueda = () => {
 
             )
         }
-    </div>
-}
+    </div>;
+};
 
 export default ResultadosBusqueda;

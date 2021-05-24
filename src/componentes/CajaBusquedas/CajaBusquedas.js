@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from 'react-router-dom';
 import './CajaBusquedas.scss';
 
 const CajaBusquedas = () => {
@@ -10,9 +10,9 @@ const CajaBusquedas = () => {
 
     const [_search, setstate] = useState(search?search:'');
 
-    const eventoBuscar = (e) => {
+    const eventoBuscar = e => {
         console.log(_search);
-        history.push({ pathname: '/items', search: '?search=' + _search });
+        history.push({ pathname: '/items', search: `?search=${_search}` });
         e.preventDefault();
     };
 
@@ -29,6 +29,6 @@ const CajaBusquedas = () => {
             <img className ='icono-busqueda' alt='ic_Search.png' src='/imagenes/ic_Search.png' />
         </div>
     </form>;
-}
+};
 
 export default CajaBusquedas;
