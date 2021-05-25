@@ -6,7 +6,6 @@ import ResultadosBusqueda from "./componentes/ResultadosBusqueda/ResultadosBusqu
 import DetallePrducto from "./componentes/DetalleProducto/DetalleProducto";
 import './App.scss';
 
-
 function App() {
   return (
     <Router>

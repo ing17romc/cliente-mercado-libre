@@ -1,20 +1,69 @@
+@import '../../scss/variables.scss';
+@import '../../scss/funciones.scss';
 
-.relleno-vertical-menu
-{
-    padding: 10px;
+
+$padding-categorias: 15;
+$tamanio-imagen: 180;
+$border-radio: 4;
+$espaciado: 20;
+$padding-detalle: 10;
+
+.contenedor-resultado-busqueda {
+    background-color: $color-blanco;
+    margin: 0 auto;
+    min-height: auto;
+    width: 100vw;
+
+    & .categorias {
+        background-color: $color-gris-claro;
+        padding: { 
+            top:  calcularTamanioVW($padding-categorias); 
+            bottom: calcularTamanioVW($padding-categorias); 
+        }
+    }
+    & .detalle {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 20% auto 20%;
+            grid-gap: calcularTamanioVW($espaciado) calcularTamanioVW($espaciado);
+            padding:  calcularTamanioVW($padding-detalle);
+
+        & .imagen {
+            display:block;
+            margin:auto;
+            width: auto;
+            height: calcularTamanioVW($tamanio-imagen);
+            -webkit-border-radius: calcularTamanioVW($border-radio);
+            -moz-border-radius: calcularTamanioVW($border-radio);
+            border-radius: calcularTamanioVW($border-radio);
+        }
+    }
+    & hr{
+        width: 96%;
+    }
 }
-.detalle {
-    display: grid;
-	width: 100%;
-    grid-template-columns: 20% auto 20%;
-    grid-gap: 20px 20px;
-  }
-.imagen {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+
+@media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
+    .contenedor-resultado-busqueda {
+          width: auto;
+          max-width: 1024px;
+
+          & .categorias {
+            padding: { 
+                top:  unidadPixel($padding-categorias); 
+                bottom: unidadPixel($padding-categorias); 
+            }
+        }
+        & .detalle {
+                grid-gap: unidadPixel($espaciado) unidadPixel($espaciado);
+                padding:  unidadPixel($padding-detalle);
+    
+            & .imagen {
+                height: unidadPixel($tamanio-imagen);
+                -webkit-border-radius: unidadPixel($border-radio);
+                -moz-border-radius: unidadPixel($border-radio);
+                border-radius: unidadPixel($border-radio);
+            }
+        }
+    }
 }
-
-
-
-

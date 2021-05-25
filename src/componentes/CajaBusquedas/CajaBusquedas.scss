@@ -1,40 +1,107 @@
 @import '../../scss/variables.scss';
-.relleno-vertical
+@import '../../scss/funciones.scss';
+
+$padding-caja-busqueda: 10;
+$padding-input: 20;
+$altura-caja-busqueda: 36;
+$tamanio-icono-lupita: 18;
+$tamanio-texto: 18;
+
+.contenedor-caja-busqueda {
+    & .marco{
+        background-color: $color-amarillo;
+        margin: 0 auto;
+        min-height: auto;
+        width: 100vw;
+
+        & .relleno-vertical
+        {
+            padding: { 
+                top: calcularTamanioVW($padding-caja-busqueda); 
+                bottom: calcularTamanioVW($padding-caja-busqueda); 
+            }
+        }
+        & .logo-ml {
+            display: inline-block;
+            width: auto;
+            height: auto;
+        }
+
+        & .input-icono {
+            background: {
+                image: url('/imagenes/ic_Search.png');
+                repeat: no-repeat;
+                position: 99% 50%;
+                size: calcularTamanioVW($tamanio-icono-lupita);
+                color: $color-gris-claro;
+            }
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding-right: calcularTamanioVW($altura-caja-busqueda);
+            height: calcularTamanioVW($altura-caja-busqueda);
+
+            & input {
+                background-color: $color-blanco;
+                width: 100%;
+                height: calcularTamanioVW($altura-caja-busqueda);
+                border: none;
+                font-size: calcularTamanioVW($tamanio-texto);
+                float: left;
+                padding: {
+                    right: calcularTamanioVW($padding-input);
+                    left: calcularTamanioVW($padding-input);
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
+  .contenedor-caja-busqueda {
+    & .marco{
+        width: auto;
+        max-width: 1024px;
+
+        & .relleno-vertical {
+            padding: { 
+                top:  unidadPixel($padding-caja-busqueda); 
+                bottom: unidadPixel($padding-caja-busqueda); 
+            }
+        }
+
+        & .input-icono {
+            background: {
+                size: unidadPixel($tamanio-icono-lupita);
+            }
+            padding-right: unidadPixel($altura-caja-busqueda);
+            height: unidadPixel($altura-caja-busqueda);
+
+            & input {
+                    height: unidadPixel($altura-caja-busqueda);
+                    font-size: unidadPixel($tamanio-texto);
+                    padding: {
+                        right: unidadPixel($padding-input);
+                        left: unidadPixel($padding-input);
+                    }
+                }
+            }
+        }
+    }
+}
+
+input[type="search"]
 {
-    padding: 5px;
-}
-.logo-ml {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-}
-.caja-busqueda {
-    display: inline-block;
-    float: left;
-    width: 92%;
-    border: 0px;
-    height: 30px;
-    text-align: start;
-}
-.icono-busqueda {
-    background-color: $color-gris-claro;
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    padding: 7px;
-}
-
-.manito {
-    cursor: pointer;
-}
-
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance:none;
-}
-
-input:focus {
-    outline: none;
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      -webkit-appearance:none;
+    }    
+    &:focus {
+        outline: none;
+    }
 }

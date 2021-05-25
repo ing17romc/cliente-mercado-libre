@@ -35,35 +35,37 @@ const ResultadosBusqueda = () => {
         history.push({ pathname: `/items/${id}`, state: { categorias, search } });
     };
 
-    return <div className='cuadricula '>
-        <div className='inicia-2 mide-10 relleno-vertical-menu'>
+    return <div className='contenedor-resultado-busqueda'>
+        <div className='cuadricula '>
+            <div className='inicia-1 mide-12 categorias'>
+                {
+                    categorias.map((element, index) => <label key={`cat_${index}`}> {`${element} > `} </label>)
+                }
+            </div>
             {
-                categorias.map((element, index) => <label key={`cat_${index}`}> {`${element} > `} </label>)
+                state.map(elemento =>
+
+                    <div className='inicia-1 mide-12' key={elemento.id}>
+
+                        <div className='detalle'>
+                            <div>
+                                <img onClick={() => detalleProducto(elemento.id)} className='imagen manito' alt='imagen' src={elemento.picture} />
+                            </div>
+                            <div >
+                                <h3> {elemento.price.decimals} {elemento.free_shipping ? 'envio gratis' : ''}</h3>
+                                <h4 className='manito' onClick={() => detalleProducto(elemento.id)}>{elemento.title}</h4>
+                            </div>
+                            <div>
+                                <h4>{elemento.state_name}</h4>
+                                <h5>{elemento.id}</h5>
+                            </div>
+                        </div>
+                        <hr></hr>
+                    </div>
+
+                )
             }
         </div>
-        {
-            state.map(elemento =>
-
-                <div className='inicia-2 mide-10 fondo-blanco' key={elemento.id}>
-
-                    <div className='detalle'>
-                        <div>
-                            <img onClick={() => detalleProducto(elemento.id)} className='imagen manito' alt='imagen' src={elemento.picture} />
-                        </div>
-                        <div >
-                            <h3> {elemento.price.decimals} {elemento.free_shipping ? 'envio gratis' : ''}</h3>
-                            <h4 className='manito' onClick={() => detalleProducto(elemento.id)}>{elemento.title}</h4>
-                        </div>
-                        <div>
-                            <h4>{elemento.state_name}</h4>
-                            <h5>{elemento.id}</h5>
-                        </div>
-                    </div>
-                    <hr></hr>
-                </div>
-
-            )
-        }
     </div>;
 };
 
