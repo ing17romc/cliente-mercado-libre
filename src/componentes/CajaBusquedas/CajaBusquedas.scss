@@ -6,102 +6,89 @@ $padding-input: 20;
 $altura-caja-busqueda: 36;
 $tamanio-icono-lupita: 18;
 $tamanio-texto: 18;
+$altura-logo: 36;
+$ancho-logo: 56;
 
-.contenedor-caja-busqueda {
+.contenedor {
     & .marco{
-        background-color: $color-amarillo;
-        margin: 0 auto;
-        min-height: auto;
-        width: 100vw;
-
-        & .relleno-vertical
-        {
-            padding: { 
-                top: calcularTamanioVW($padding-caja-busqueda); 
-                bottom: calcularTamanioVW($padding-caja-busqueda); 
+            & .relleno-vertical
+            {
+                padding: { 
+                    top: calcularTamanioVW($padding-caja-busqueda); 
+                    bottom: calcularTamanioVW($padding-caja-busqueda); 
+                }
             }
-        }
-        & .logo-ml {
-            display: inline-block;
-            width: auto;
-            height: auto;
-        }
-
-        & .input-icono {
-            background: {
-                image: url('/imagenes/ic_Search.png');
-                repeat: no-repeat;
-                position: 99% 50%;
-                size: calcularTamanioVW($tamanio-icono-lupita);
-                color: $color-gris-claro;
+            & .logo-ml {
+                display: block;
+                width: calcularTamanioVW($ancho-logo);
+                height: calcularTamanioVW($altura-logo);
             }
-            display: flex;
-            align-items: center;
-            width: 100%;
-            padding-right: calcularTamanioVW($altura-caja-busqueda);
-            height: calcularTamanioVW($altura-caja-busqueda);
-
-            & input {
-                background-color: $color-blanco;
+      
+            & .input-icono {
+                background: {
+                    image: url('/imagenes/ic_Search.png');
+                    repeat: no-repeat;
+                    position: 99% 50%;
+                    size: calcularTamanioVW($tamanio-icono-lupita);
+                    color: $color-gris-claro;
+                }
+                display: flex;
+                align-items: center;
                 width: 100%;
+                padding-right: calcularTamanioVW($altura-caja-busqueda);
                 height: calcularTamanioVW($altura-caja-busqueda);
-                border: none;
-                font-size: calcularTamanioVW($tamanio-texto);
-                float: left;
-                padding: {
-                    right: calcularTamanioVW($padding-input);
-                    left: calcularTamanioVW($padding-input);
-                }
-                &:focus {
-                    outline: none;
+      
+                & input {
+                    background-color: $color-blanco;
+                    width: 100%;
+                    height: calcularTamanioVW($altura-caja-busqueda);
+                    border: none;
+                    font-size: calcularTamanioVW($tamanio-texto);
+                    float: left;
+                    padding: {
+                        right: calcularTamanioVW($padding-input);
+                        left: calcularTamanioVW($padding-input);
+                    }
+                    &:focus {
+                        outline: none;
+                    }
                 }
             }
-        }
     }
 }
 
 @media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
-  .contenedor-caja-busqueda {
+  .contenedor {
     & .marco{
-        width: auto;
-        max-width: 1024px;
-
-        & .relleno-vertical {
+    
+        & .relleno-vertical
+        {
             padding: { 
-                top:  unidadPixel($padding-caja-busqueda); 
+                top: unidadPixel($padding-caja-busqueda); 
                 bottom: unidadPixel($padding-caja-busqueda); 
             }
         }
-
+        & .logo-ml {
+            width: unidadPixel($ancho-logo);
+            height: unidadPixel($altura-logo);
+        }
+  
         & .input-icono {
+            padding-right: unidadPixel($altura-caja-busqueda);
+            height: unidadPixel($altura-caja-busqueda);
             background: {
                 size: unidadPixel($tamanio-icono-lupita);
             }
-            padding-right: unidadPixel($altura-caja-busqueda);
-            height: unidadPixel($altura-caja-busqueda);
 
             & input {
-                    height: unidadPixel($altura-caja-busqueda);
-                    font-size: unidadPixel($tamanio-texto);
-                    padding: {
-                        right: unidadPixel($padding-input);
-                        left: unidadPixel($padding-input);
-                    }
+                height: unidadPixel($altura-caja-busqueda);
+                font-size: unidadPixel($tamanio-texto);
+                padding: {
+                    right: unidadPixel($padding-input);
+                    left: unidadPixel($padding-input);
                 }
             }
         }
     }
 }
-
-input[type="search"]
-{
-    &::-webkit-search-decoration,
-    &::-webkit-search-cancel-button,
-    &::-webkit-search-results-button,
-    &::-webkit-search-results-decoration {
-      -webkit-appearance:none;
-    }    
-    &:focus {
-        outline: none;
-    }
 }

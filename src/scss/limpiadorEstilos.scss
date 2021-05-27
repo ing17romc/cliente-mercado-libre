@@ -118,12 +118,18 @@ body {
   line-height: 1;
 }
 
-/* Predeterminar estilo a las listas ol y ul */
-ol, ul {
-  list-style: none;
-}
-
-/* Predeterminar estilo a las etiquetas blockquote y q */
+/* Predeterminar input[type="search"]
+{
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      -webkit-appearance:none;
+    }    
+    &:focus {
+        outline: none;
+    }
+}estilo a las etiquetas blockquote y q */
 blockquote, q {
   quotes: none;
 }
@@ -138,4 +144,26 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+input[type="search"]
+{
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      -webkit-appearance:none;
+    }    
+    &:focus {
+        outline: none;
+    }
+}
+
+body
+{
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

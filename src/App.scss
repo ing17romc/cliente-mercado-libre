@@ -1,15 +1,55 @@
 @import './scss/variables.scss';
+@import './scss/funciones.scss';
+
+$padding-categorias: 16;
+$altura-categorias: 47;
 
 body {
   background-color: $color-gris-claro;
-  font-family: verdana, arial, sans-serif;
 }
- 
+
+.contenedor{
+ & .marco {
+    margin: 0 auto;
+    min-height: auto;
+    width: 100vw;
+
+    & .categorias {
+      height: calcularTamanioVW($altura-categorias); 
+      background-color: $color-gris-claro;
+      padding: { 
+        top:  calcularTamanioVW($padding-categorias); 
+        bottom: calcularTamanioVW($padding-categorias); 
+      }
+    }
+  }
+}
+
 .manito {
   cursor: pointer;
 }
 
-@media screen and (min-width: 1025px) and (hover: hover)  and (pointer: fine){
- 
+.inter-lineado {
+  line-height: normal;
 }
+
+
+@media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
+    .contenedor  {
+      & .marco{
+          width: auto;
+          max-width: 1024px;
+
+          & .categorias {
+            height: unidadPixel($altura-categorias); 
+            padding: { 
+                top:  unidadPixel($padding-categorias); 
+                bottom: unidadPixel($padding-categorias); 
+            }
+        }
+      }
+    }
+}
+ 
+
   

@@ -1,69 +1,86 @@
 @import '../../scss/variables.scss';
 @import '../../scss/funciones.scss';
 
-
-$padding-categorias: 15;
-$tamanio-imagen: 180;
 $border-radio: 4;
-$espaciado: 20;
-$padding-detalle: 10;
+$espaciado-32: 32;
+$padding-resultado-imagen: 16;
+$tamanio-resultado-imagen: 180;
+$tamanio-icono-envio-gratis: 18;
+$espacio-resultado-precio: 32;
+$tamanio-hr: 1;
 
-.contenedor-resultado-busqueda {
-    background-color: $color-blanco;
-    margin: 0 auto;
-    min-height: auto;
-    width: 100vw;
-
-    & .categorias {
-        background-color: $color-gris-claro;
-        padding: { 
-            top:  calcularTamanioVW($padding-categorias); 
-            bottom: calcularTamanioVW($padding-categorias); 
+.contenedor {
+    & .marco{
+        & .resultado-imagen {
+          display: block;
+          margin: auto;
+          width: auto;
+          padding: calcularTamanioVW($padding-resultado-imagen); 
+          height: calcularTamanioVW($tamanio-resultado-imagen);
+          -webkit-border-radius: calcularTamanioVW($border-radio);
+          -moz-border-radius: calcularTamanioVW($border-radio);
+          border-radius: calcularTamanioVW($border-radio);
+      }
+        & .resultado-precio {
+          display: grid;
+          grid-template-rows: auto auto;
+          grid-gap: calcularTamanioVW($espacio-resultado-precio);
+          padding:
+          {
+              top: calcularTamanioVW($padding-resultado-imagen); 
+              bottom: calcularTamanioVW($espaciado-32);
+          }
+          & .precio {
+            & img {
+              display: inline-block;
+              height: calcularTamanioVW($tamanio-icono-envio-gratis);
+              width: calcularTamanioVW($tamanio-icono-envio-gratis);
+            }
+          }
         }
-    }
-    & .detalle {
-            display: grid;
-            width: 100%;
-            grid-template-columns: 20% auto 20%;
-            grid-gap: calcularTamanioVW($espaciado) calcularTamanioVW($espaciado);
-            padding:  calcularTamanioVW($padding-detalle);
-
-        & .imagen {
-            display:block;
-            margin:auto;
-            width: auto;
-            height: calcularTamanioVW($tamanio-imagen);
-            -webkit-border-radius: calcularTamanioVW($border-radio);
-            -moz-border-radius: calcularTamanioVW($border-radio);
-            border-radius: calcularTamanioVW($border-radio);
+        & .resultado-ubicacion {
+          display: flex;
+          padding-top: calcularTamanioVW($padding-resultado-imagen); 
         }
-    }
-    & hr{
-        width: 96%;
+        & hr{
+          margin: auto;
+          color: $color-gris-claro;
+          border: calcularTamanioVW($tamanio-hr) solid $color-gris-claro;
+          width: 96%;
+        } 
     }
 }
 
 @media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
-    .contenedor-resultado-busqueda {
-          width: auto;
-          max-width: 1024px;
-
-          & .categorias {
-            padding: { 
-                top:  unidadPixel($padding-categorias); 
-                bottom: unidadPixel($padding-categorias); 
-            }
+  .contenedor  {
+      & .marco{
+        & .resultado-imagen {
+          padding: unidadPixel($padding-resultado-imagen); 
+          height: unidadPixel($tamanio-resultado-imagen);
+          -webkit-border-radius: unidadPixel($border-radio);
+          -moz-border-radius: unidadPixel($border-radio);
+          border-radius: unidadPixel($border-radio);
         }
-        & .detalle {
-                grid-gap: unidadPixel($espaciado) unidadPixel($espaciado);
-                padding:  unidadPixel($padding-detalle);
-    
-            & .imagen {
-                height: unidadPixel($tamanio-imagen);
-                -webkit-border-radius: unidadPixel($border-radio);
-                -moz-border-radius: unidadPixel($border-radio);
-                border-radius: unidadPixel($border-radio);
+        & .resultado-precio {
+          grid-gap: unidadPixel($espacio-resultado-precio);
+          padding:
+          {
+              top: unidadPixel($padding-resultado-imagen); 
+              bottom: unidadPixel($espaciado-32);
+          }
+          & .precio {
+            & img {
+              height: unidadPixel($tamanio-icono-envio-gratis);
+              width: unidadPixel($tamanio-icono-envio-gratis);
             }
+          }
         }
+        & .resultado-ubicacion {
+          padding-top: unidadPixel($padding-resultado-imagen); 
+        }
+        & hr{
+          border: calcularTamanioVW($tamanio-hr) solid $color-gris-claro;
+        } 
+      }
     }
 }

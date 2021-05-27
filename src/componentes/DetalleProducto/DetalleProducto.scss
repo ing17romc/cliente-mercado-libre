@@ -1,4 +1,103 @@
-.imagen-detalle{
-    width: 300px;
-    height: auto;
+@import '../../scss/variables.scss';
+@import '../../scss/funciones.scss';
+
+$espacio-superior-imagen: 32;
+$tamanio-imagen: 680;
+$espacio-detalle-descripcion: 32;
+$espacio-detalle-precio-32: 32;
+$espacio-detalle-precio-16: 16;
+$alto-boton-compra: 32;
+$radio-borde-boton-compra: 4;
+$espacio-fila: 24;
+
+.contenedor{
+    & .marco {
+        & .detalle-imagen {            
+            display:block;
+            margin:auto;
+            //width: calcularTamanioVW($tamanio-imagen);
+            padding-top: calcularTamanioVW($espacio-superior-imagen);
+            & > img {
+                display:block;
+                margin:auto;
+                width: auto;
+                height: auto;
+            }
+          }
+        & .detalle-descripcion {
+            display:grid;
+            grid-template-rows: auto auto;
+            grid-gap: calcularTamanioVW($espacio-detalle-descripcion);
+            padding: calcularTamanioVW($espacio-detalle-descripcion);
+        }
+        & .detalle-precio {
+            display:grid;
+            grid-template-rows: auto auto auto;
+            padding:
+            { 
+                top: calcularTamanioVW($espacio-detalle-precio-32);
+                right: calcularTamanioVW($espacio-detalle-precio-32);
+                bottom: calcularTamanioVW($espacio-detalle-precio-32);
+            }
+            & .condicion {
+                padding-bottom: calcularTamanioVW($espacio-detalle-precio-16);
+            }
+            & .titulo {
+                padding-bottom: calcularTamanioVW($espacio-detalle-precio-32);
+
+            }
+            & .precio {
+                padding-bottom: calcularTamanioVW($espacio-detalle-precio-32);
+            }
+            & button {
+                background-color: $color-azul;
+                height: calcularTamanioVW($alto-boton-compra);
+                color: $color-blanco;
+                border: 0px;
+                border-radius: calcularTamanioVW($radio-borde-boton-compra);
+            }
+        }
+        & .ultima-fila {
+            padding: calcularTamanioVW($espacio-fila);
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
+    .contenedor{
+        & .marco {
+            & .detalle-imagen {            
+                //width: unidadPixel($tamanio-imagen);
+                padding-top: unidadPixel($espacio-superior-imagen);
+            }
+            & .detalle-descripcion {
+                grid-gap: unidadPixel($espacio-detalle-descripcion);
+                padding: unidadPixel($espacio-detalle-descripcion);
+            }
+            & .detalle-precio {
+                padding:
+                { 
+                    top: unidadPixel($espacio-detalle-precio-32);
+                    right: unidadPixel($espacio-detalle-precio-32);
+                    bottom: unidadPixel($espacio-detalle-precio-32);
+                }
+                & .condicion {
+                    padding-bottom: unidadPixel($espacio-detalle-precio-16);
+                }
+                & .titulo {
+                    padding-bottom: unidadPixel($espacio-detalle-precio-32);
+                }
+                & .precio {
+                    padding-bottom: unidadPixel($espacio-detalle-precio-32);
+                }
+                & button {
+                    height: unidadPixel($alto-boton-compra);
+                    border-radius: unidadPixel($radio-borde-boton-compra);
+                }
+            }
+            & .ultima-fila {
+                padding: unidadPixel($espacio-fila);
+            }
+        }
+    }
 }
