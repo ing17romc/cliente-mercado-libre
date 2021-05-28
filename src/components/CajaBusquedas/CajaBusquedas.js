@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import './CajaBusquedas.scss';
 
-import logoML from '../../imagenes//Logo_ML.png';
+import logoML from '../../image/Logo_ML.png';
 
 const CajaBusquedas = () => {
 
@@ -11,17 +11,16 @@ const CajaBusquedas = () => {
 
     const search = new URLSearchParams(location.search).get('search');
 
-    const [_search, setstate] = useState(search ? search : '');
+    const [buscar, setBuscar] = useState(search ? search : '');
 
     const eventoBuscar = e => {
-        history.push({ pathname: '/items', search: `?search=${_search}` });
+        history.push({ pathname: '/items', search: `?search=${buscar}` });
         e.preventDefault();
     };
 
     const eventoCambioBusqueda = e => {
-        setstate(e.target.value);
+        setBuscar(e.target.value);
     };
-
 
     return <>
         <div className='contenedor fondo-amarillo'>
@@ -33,15 +32,14 @@ const CajaBusquedas = () => {
                     </div>
                     <div className='inicia-3 mide-9'>
                         <div className='input-icono '>
-                            <input type='search' placeholder='Nunca dejes de buscar' value={_search} onChange={eventoCambioBusqueda} />
+                            <input type='search' placeholder='Nunca dejes de buscar' value={buscar} onChange={eventoCambioBusqueda} />
                         </div>
                     </div>
                 </form>
             </div>
         </div>
 
-    </>
-        ;
+    </>;
 };
 
 export default CajaBusquedas;

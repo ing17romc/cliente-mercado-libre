@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import CajaBusquedas from './componentes/CajaBusquedas/CajaBusquedas';
-import ResultadosBusqueda from './componentes/ResultadosBusqueda/ResultadosBusqueda';
-import DetallePrducto from './componentes/DetalleProducto/DetalleProducto';
+import CajaBusquedas from './components/CajaBusquedas/CajaBusquedas';
+import ResultadosBusqueda from './components/ResultadosBusqueda/ResultadosBusqueda';
+import DetallePrducto from './components/DetalleProducto/DetalleProducto';
 import { Provider } from 'react-redux';
-import store from './almacenamiento/almacenamiento';
+import store from './store/almacenamiento';
 import './App.scss';
 
 function App() {

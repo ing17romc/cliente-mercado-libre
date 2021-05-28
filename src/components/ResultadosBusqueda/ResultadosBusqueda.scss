@@ -3,7 +3,7 @@
 
 $border-radio: 4;
 $espaciado-32: 32;
-$padding-resultado-imagen: 16;
+$espacio-resultado-imagen: 16;
 $tamanio-resultado-imagen: 180;
 $tamanio-icono-envio-gratis: 18;
 $espacio-resultado-precio: 32;
@@ -15,7 +15,7 @@ $tamanio-hr: 1;
           display: block;
           margin: auto;
           width: auto;
-          padding: calcularTamanioVW($padding-resultado-imagen); 
+          padding: calcularTamanioVW($espacio-resultado-imagen); 
           height: calcularTamanioVW($tamanio-resultado-imagen);
           -webkit-border-radius: calcularTamanioVW($border-radio);
           -moz-border-radius: calcularTamanioVW($border-radio);
@@ -27,7 +27,7 @@ $tamanio-hr: 1;
           grid-gap: calcularTamanioVW($espacio-resultado-precio);
           padding:
           {
-              top: calcularTamanioVW($padding-resultado-imagen); 
+              top: calcularTamanioVW($espacio-resultado-imagen); 
               bottom: calcularTamanioVW($espaciado-32);
           }
           & .precio {
@@ -40,7 +40,7 @@ $tamanio-hr: 1;
         }
         & .resultado-ubicacion {
           display: flex;
-          padding-top: calcularTamanioVW($padding-resultado-imagen); 
+          padding-top: calcularTamanioVW($espacio-resultado-imagen); 
         }
         & hr{
           margin: auto;
@@ -55,7 +55,7 @@ $tamanio-hr: 1;
   .contenedor  {
       & .marco{
         & .resultado-imagen {
-          padding: unidadPixel($padding-resultado-imagen); 
+          padding: unidadPixel($espacio-resultado-imagen); 
           height: unidadPixel($tamanio-resultado-imagen);
           -webkit-border-radius: unidadPixel($border-radio);
           -moz-border-radius: unidadPixel($border-radio);
@@ -65,7 +65,7 @@ $tamanio-hr: 1;
           grid-gap: unidadPixel($espacio-resultado-precio);
           padding:
           {
-              top: unidadPixel($padding-resultado-imagen); 
+              top: unidadPixel($espacio-resultado-imagen); 
               bottom: unidadPixel($espaciado-32);
           }
           & .precio {
@@ -76,7 +76,7 @@ $tamanio-hr: 1;
           }
         }
         & .resultado-ubicacion {
-          padding-top: unidadPixel($padding-resultado-imagen); 
+          padding-top: unidadPixel($espacio-resultado-imagen); 
         }
         & hr{
           border: calcularTamanioVW($tamanio-hr) solid $color-gris-claro;

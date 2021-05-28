@@ -16,7 +16,10 @@ $espacio-fila: 24;
             display:block;
             margin:auto;
             //width: calcularTamanioVW($tamanio-imagen);
-            padding-top: calcularTamanioVW($espacio-superior-imagen);
+            padding : {
+                top: calcularTamanioVW($espacio-superior-imagen);
+                left: calcularTamanioVW($espacio-superior-imagen);
+            }
             & > img {
                 display:block;
                 margin:auto;

@@ -1,8 +1,8 @@
 @import '../../scss/variables.scss';
 @import '../../scss/funciones.scss';
 
-$padding-caja-busqueda: 10;
-$padding-input: 20;
+$espacio-caja-busqueda: 10;
+$espacio-input: 20;
 $altura-caja-busqueda: 36;
 $tamanio-icono-lupita: 18;
 $tamanio-texto: 18;
@@ -14,8 +14,8 @@ $ancho-logo: 56;
             & .relleno-vertical
             {
                 padding: { 
-                    top: calcularTamanioVW($padding-caja-busqueda); 
-                    bottom: calcularTamanioVW($padding-caja-busqueda); 
+                    top: calcularTamanioVW($espacio-caja-busqueda); 
+                    bottom: calcularTamanioVW($espacio-caja-busqueda); 
                 }
             }
             & .logo-ml {
@@ -26,7 +26,7 @@ $ancho-logo: 56;
       
             & .input-icono {
                 background: {
-                    image: url('/imagenes/ic_Search.png');
+                    image: url('/image/ic_Search.png');
                     repeat: no-repeat;
                     position: 99% 50%;
                     size: calcularTamanioVW($tamanio-icono-lupita);
@@ -46,8 +46,8 @@ $ancho-logo: 56;
                     font-size: calcularTamanioVW($tamanio-texto);
                     float: left;
                     padding: {
-                        right: calcularTamanioVW($padding-input);
-                        left: calcularTamanioVW($padding-input);
+                        right: calcularTamanioVW($espacio-input);
+                        left: calcularTamanioVW($espacio-input);
                     }
                     &:focus {
                         outline: none;
@@ -64,8 +64,8 @@ $ancho-logo: 56;
         & .relleno-vertical
         {
             padding: { 
-                top: unidadPixel($padding-caja-busqueda); 
-                bottom: unidadPixel($padding-caja-busqueda); 
+                top: unidadPixel($espacio-caja-busqueda); 
+                bottom: unidadPixel($espacio-caja-busqueda); 
             }
         }
         & .logo-ml {
@@ -84,8 +84,8 @@ $ancho-logo: 56;
                 height: unidadPixel($altura-caja-busqueda);
                 font-size: unidadPixel($tamanio-texto);
                 padding: {
-                    right: unidadPixel($padding-input);
-                    left: unidadPixel($padding-input);
+                    right: unidadPixel($espacio-input);
+                    left: unidadPixel($espacio-input);
                 }
             }
         }
