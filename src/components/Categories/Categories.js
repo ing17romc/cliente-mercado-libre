@@ -2,6 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import './Categories.scss';
 
+/**
+ * @decriptionFuntion Categories Component
+ * @author Rafael Orlando Márquez Cedeño
+ */
+
 const Categories = () => {
 
     const categories = useSelector(state => state.categories);

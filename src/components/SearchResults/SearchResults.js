@@ -7,6 +7,11 @@ import { REGISTER_CATEGORIES } from '../../config';
 import apiSearch from '../../apis/apiSearch';
 import './SearchResults.scss';
 
+/**
+ * @decriptionFuntion Seach Results Component
+ * @author Rafael Orlando Márquez Cedeño
+ */
+
 const SearchResults = () => {
 
     const history = useHistory();

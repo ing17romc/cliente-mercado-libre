@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import './SearchBox.scss';
-
 import MLlogo from '../../image/Logo_ML.png';
+
+/**
+ * @decriptionFuntion Search Box Component
+ * @author Rafael Orlando Márquez Cedeño
+ */
 
 const SearchBox = () => {
 

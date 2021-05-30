@@ -7,6 +7,11 @@ const initialState =
   categories: [],
 };
 
+/**
+ * @decriptionFuntion ML store
+ * @author Rafael Orlando Márquez Cedeño
+ */
+
 const mercadoLibre = (state = initialState, action) => {
 
   switch (action.type) {

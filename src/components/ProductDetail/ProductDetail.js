@@ -5,6 +5,11 @@ import apiDetail from '../../apis/apiDetail';
 import Categories from '../Categories/Categories';
 import './ProductDetail.scss';
 
+/**
+ * @decriptionFuntion Product Detail Component
+ * @author Rafael Orlando Márquez Cedeño
+ */
+
 const ProductDetail = () => {
 
     const { id } = useParams();
