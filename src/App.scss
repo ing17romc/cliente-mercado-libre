@@ -1,30 +1,30 @@
 @import './scss/variables.scss';
-@import './scss/funciones.scss';
+@import './scss/functions.scss';
 
 body {
-  background-color: $color-gris-claro;
+  background-color: $light-gray-color;
 }
 
-.contenedor{
- & .marco {
+.main-conteiner{
+ & .frame {
     margin: 0 auto;
     min-height: auto;
     width: 100vw;
   }
 }
 
-.manito {
+.little-hand {
   cursor: pointer;
 }
 
-.inter-lineado {
+.line-spacing{
   line-height: normal;
 }
 
 
 @media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
-    .contenedor  {
-      & .marco{
+  .main-conteiner  {
+      & .frame{
           width: auto;
           max-width: 1024px;
       }

@@ -1,8 +1,0 @@
-/*Función que convierte pixeles*/
-@function unidadPixel($unidad: 1){
-    @return  $unidad * 1px ;
-}
-/*Función que convierte pixeles a vw*/
-@function calcularTamanioVW($pixeles: 1, $resolucion: 1024){
-    @return ($pixeles * 100) / $resolucion * 1vw ;
-}

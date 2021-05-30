@@ -1,0 +1,86 @@
+@import '../../scss/variables.scss';
+@import '../../scss/functions.scss';
+
+$border-radius: 4;
+$padding-32: 32;
+$padding-16: 16;
+$size-result-image: 180;
+$size-icon-free-shipping: 18;
+$padding-result-price: 32;
+$border-hr: 1;
+
+.main-container {
+    & .frame{
+        & .result-image {
+          display: block;
+          margin: auto;
+          width: auto;
+          padding: calculateSizeVW($padding-16); 
+          height: calculateSizeVW($size-result-image);
+          -webkit-border-radius: calculateSizeVW($border-radius);
+          -moz-border-radius: calculateSizeVW($border-radius);
+          border-radius: calculateSizeVW($border-radius);
+      }
+        & .result-price {
+          display: grid;
+          grid-template-rows: auto auto;
+          grid-gap: calculateSizeVW($padding-result-price);
+          padding:
+          {
+              top: calculateSizeVW($padding-16); 
+              bottom: calculateSizeVW($padding-32);
+          }
+          & .price {
+            & img {
+              display: inline-block;
+              height: calculateSizeVW($size-icon-free-shipping);
+              width: calculateSizeVW($size-icon-free-shipping);
+            }
+          }
+        }
+        & .result-location {
+          display: flex;
+          padding-top: calculateSizeVW($padding-16); 
+        }
+        & hr{
+          margin: auto;
+          color: $light-gray-color;
+          border: calculateSizeVW($border-hr) solid $light-gray-color;
+          width: 96%;
+        } 
+    }
+}
+
+@media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
+  .main-container  {
+      & .frame{
+        & .result-image {
+          padding: calculateSizePX($padding-16); 
+          height: calculateSizePX($size-result-image);
+          -webkit-border-radius: calculateSizePX($border-radius);
+          -moz-border-radius: calculateSizePX($border-radius);
+          border-radius: calculateSizePX($border-radius);
+        }
+        & .result-price {
+          grid-gap: calculateSizePX($padding-result-price);
+          padding:
+          {
+              top: calculateSizePX($padding-16); 
+              bottom: calculateSizePX($padding-32);
+          }
+          & .price {
+            & img {
+              height: calculateSizePX($size-icon-free-shipping);
+              width: calculateSizePX($size-icon-free-shipping);
+            }
+          }
+        }
+        & .result-location {
+          padding-top: calculateSizePX($padding-16); 
+        }
+        & hr{
+          border: calculateSizeVW($border-hr) solid $light-gray-color;
+        } 
+      }
+    }
+}

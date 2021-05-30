@@ -1,19 +1,19 @@
 
 import { createStore } from 'redux';
-import { REGISTRAR_CATEGORIAS } from '../config';
+import { REGISTER_CATEGORIES } from '../config';
 
 const initialState =
 {
-  categorias: [],
+  categories: [],
 };
 
 const mercadoLibre = (state = initialState, action) => {
 
   switch (action.type) {
-    case REGISTRAR_CATEGORIAS:
+    case REGISTER_CATEGORIES:
       return {
         ...state,
-        categorias: action.datos,
+        categories: action.datos,
       };
 
     default:

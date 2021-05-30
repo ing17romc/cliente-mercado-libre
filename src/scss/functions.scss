@@ -1,0 +1,8 @@
+
+@function calculateSizePX($unidad: 1){
+    @return  $unidad * 1px ;
+}
+
+@function calculateSizeVW($pixeles: 1, $resolucion: 1024){
+    @return ($pixeles * 100) / $resolucion * 1vw ;
+}

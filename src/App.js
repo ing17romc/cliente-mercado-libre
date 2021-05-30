@@ -1,20 +1,20 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import CajaBusquedas from './components/CajaBusquedas/CajaBusquedas';
-import ResultadosBusqueda from './components/ResultadosBusqueda/ResultadosBusqueda';
-import DetallePrducto from './components/DetalleProducto/DetalleProducto';
+import SearchBox from './components/SearchBox/SearchBox';
+import SearchResults from './components/SearchResults/SearchResults';
+import ProductDetail from './components/ProductDetail/ProductDetail';
 import { Provider } from 'react-redux';
-import store from './store/almacenamiento';
+import store from './store/store';
 import './App.scss';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Route path='/' component={CajaBusquedas} />
-        <Route exact path='/items' component={ResultadosBusqueda} />
-        <Route exact path='/items/:id' component={DetallePrducto} />
+        <Route path='/' component={SearchBox} />
+        <Route exact path='/items' component={SearchResults} />
+        <Route exact path='/items/:id' component={ProductDetail} />
       </Router>
     </Provider>
   );

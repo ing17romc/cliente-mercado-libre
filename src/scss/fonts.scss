@@ -1,0 +1,85 @@
+@import './variables.scss';
+@import './functions.scss';
+
+$size-12: 12;
+$size-14: 14;
+$size-16: 16;
+$size-18: 18;
+$size-24: 24;
+$size-28: 28;
+$size-46: 46;
+
+.font-12
+{
+    display: inline;
+    font-size: calculateSizeVW($size-12);
+}
+.font-14
+{
+    display: inline;
+    font-size: calculateSizeVW($size-14);
+}
+.font-16
+{
+    display: inline;
+    font-size: calculateSizeVW($size-16);
+}
+.font-18
+{
+    display: inline;
+    font-size: calculateSizeVW($size-18);
+}
+.font-24
+{
+    display: inline;
+    font-size: calculateSizeVW($size-24);
+}
+.font-28
+{
+    display: inline;
+    font-size: calculateSizeVW($size-28);
+}
+.font-46
+{
+    display: inline;
+    font-size: calculateSizeVW($size-46);
+}
+
+
+@media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
+    .font-12
+    {
+        display: inline;
+        font-size: calculateSizePX($size-12);
+    }
+    .font-14
+    {
+        display: inline;
+        font-size: calculateSizePX($size-14);
+    }
+    .font-16
+    {
+        display: inline;
+        font-size: calculateSizePX($size-16);
+    }
+    .font-18
+    {
+        display: inline;
+        font-size: calculateSizePX($size-18);
+    }
+    .font-24
+    {
+        display: inline;
+        font-size: calculateSizePX($size-24);
+    }
+    .font-28
+    {
+        display: inline;
+        font-size: calculateSizePX($size-28);
+    }
+    .font-46
+    {
+        display: inline;
+        font-size: calculateSizePX($size-46);
+    }
+}

@@ -1,0 +1,94 @@
+@import '../../scss/variables.scss';
+@import '../../scss/functions.scss';
+
+$padding-search-box: 10;
+$padding-input: 20;
+$heigth-search-box: 36;
+$icon-size: 18;
+$font-size: 18;
+$height-logo: 36;
+$width-logo: 56;
+
+.main-container {
+    & .frame{
+            & .padding-component-search-box
+            {
+                padding: { 
+                    top: calculateSizeVW($padding-search-box); 
+                    bottom: calculateSizeVW($padding-search-box); 
+                }
+            }
+            & .logo-ml {
+                display: block;
+                width: calculateSizeVW($width-logo);
+                height: calculateSizeVW($height-logo);
+            }
+      
+            & .input-icon {
+                background: {
+                    image: url('/image/ic_Search.png');
+                    repeat: no-repeat;
+                    position: 99% 50%;
+                    size: calculateSizeVW($icon-size);
+                    color: $light-gray-color;
+                }
+                display: flex;
+                align-items: center;
+                width: 100%;
+                padding-right: calculateSizeVW($heigth-search-box);
+                height: calculateSizeVW($heigth-search-box);
+      
+                & input {
+                    background-color: $white-color;
+                    width: 100%;
+                    height: calculateSizeVW($heigth-search-box);
+                    border: none;
+                    font-size: calculateSizeVW($font-size);
+                    float: left;
+                    padding: {
+                        right: calculateSizeVW($padding-input);
+                        left: calculateSizeVW($padding-input);
+                    }
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+    }
+}
+
+@media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
+  .main-container {
+    & .frame{
+    
+        & .padding-component-search-box
+        {
+            padding: { 
+                top: calculateSizePX($padding-search-box); 
+                bottom: calculateSizePX($padding-search-box); 
+            }
+        }
+        & .logo-ml {
+            width: calculateSizePX($width-logo);
+            height: calculateSizePX($height-logo);
+        }
+  
+        & .input-icon {
+            padding-right: calculateSizePX($heigth-search-box);
+            height: calculateSizePX($heigth-search-box);
+            background: {
+                size: calculateSizePX($icon-size);
+            }
+
+            & input {
+                height: calculateSizePX($heigth-search-box);
+                font-size: calculateSizePX($font-size);
+                padding: {
+                    right: calculateSizePX($padding-input);
+                    left: calculateSizePX($padding-input);
+                }
+            }
+        }
+    }
+}
+}

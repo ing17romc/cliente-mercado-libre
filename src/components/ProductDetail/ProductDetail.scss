@@ -1,0 +1,104 @@
+@import '../../scss/variables.scss';
+@import '../../scss/functions.scss';
+
+$padding-32: 32;
+$padding-16: 16;
+$sixe-image: 680;
+$height-button: 32;
+$border-radius-button: 4;
+$padding-row: 24;
+
+.main-container{
+    & .frame {
+        & .image-detail {            
+            display:block;
+            margin:auto;
+            max-width: calculateSizeVW($sixe-image);
+            padding : {
+                top: calculateSizeVW($padding-32);
+                left: calculateSizeVW($padding-32);
+            }
+            & > img {
+                display:block;
+                margin:auto;
+                width: auto;
+                height: auto;
+            }
+          }
+        & .description-detail {
+            display:grid;
+            grid-template-rows: auto auto;
+            grid-gap: calculateSizeVW($padding-32);
+            padding: calculateSizeVW($padding-32);
+        }
+        & .price-detail {
+            display:grid;
+            grid-template-rows: auto auto auto;
+            padding:
+            { 
+                top: calculateSizeVW($padding-32);
+                right: calculateSizeVW($padding-32);
+                bottom: calculateSizeVW($padding-32);
+            }
+            & .condition {
+                padding-bottom: calculateSizeVW($padding-16);
+            }
+            & .title {
+                padding-bottom: calculateSizeVW($padding-32);
+
+            }
+            & .price {
+                padding-bottom: calculateSizeVW($padding-32);
+            }
+            & button {
+                background-color: $blue-color;
+                height: calculateSizeVW($height-button);
+                color: $white-color;
+                border: 0px;
+                border-radius: calculateSizeVW($border-radius-button);
+            }
+        }
+        & .last-row {
+            padding: calculateSizeVW($padding-row);
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) and (hover: hover) and (pointer: fine){
+    .main-container{
+        & .frame {
+            & .image-detail {            
+                max-width: calculateSizePX($sixe-image);
+                padding-top: calculateSizePX($padding-32);
+            }
+            & .description-detail {
+                grid-gap: calculateSizePX($padding-32);
+                padding: calculateSizePX($padding-32);
+            }
+            & .price-detail {
+                padding:
+                { 
+                    top: calculateSizePX($padding-32);
+                    right: calculateSizePX($padding-32);
+                    bottom: calculateSizePX($padding-32);
+                }
+                & .condition {
+                    padding-bottom: calculateSizePX($padding-16);
+                }
+                & .title {
+                    padding-bottom: calculateSizePX($padding-32);
+                }
+                & .price {
+                    padding-bottom: calculateSizePX($padding-32);
+                }
+                & button {
+                    height: calculateSizePX($height-button);
+                    border-radius: calculateSizePX($border-radius-button);
+                }
+            }
+            & .last-row {
+                padding: calculateSizePX($padding-row);
+            }
+        }
+    }
+}

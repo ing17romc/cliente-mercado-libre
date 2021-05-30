@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-import './scss/limpiadorEstilos.scss';
-import './scss/cuadricula.scss';
-import './scss/colores.scss';
-import './scss/fuente.scss';
+import './scss/cleaner.scss';
+import './scss/grids.scss';
+import './scss/colors.scss';
+import './scss/fonts.scss';
 
 ReactDOM.render(
   <React.StrictMode>
